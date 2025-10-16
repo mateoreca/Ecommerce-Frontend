@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GYMFORCE | Suplementos y Accesorios Fitness</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Gym Supplements</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="encabezado">
-    <h1>GYMFORCE</h1>
-    <p class="slogan">Potencia tu cuerpo. Supera tus límites.</p>
-    <p class="descripcion">
-      GYMFORCE es un ecommerce especializado en suplementos y accesorios premium para deportistas exigentes.
-      Tecnología, nutrición y diseño pensado para rendimiento real.
-    </p>
-  </header>
+  <h1>Ecommerce Gym Supplements</h1>
 
-  <section class="filtros">
-    <label for="filtro-categoria"><strong>Filtrar por categoría:</strong></label>
+  <div class="filtros">
+    <label for="filtro-categoria">Filtrar por categoría:</label>
     <select id="filtro-categoria">
-      <option value="todos">Todos</option>
-      <option value="suplementos">Suplementos</option>
-      <option value="accesorios">Accesorios</option>
+      <option value="todas">Todas</option>
+      <option value="Suplementos">Suplementos</option>
+      <option value="Accesorios">Accesorios</option>
     </select>
-  </section>
+  </div>
 
-  <main>
-    <div id="productos" aria-live="polite"></div>
+  <div id="productos"></div>
 
-    <aside class="carrito">
-      <h2>🧾 Carrito de Compras</h2>
-      <ul id="lista-carrito" aria-live="polite"></ul>
-      <p><strong>Total: $<span id="total">0.00</span></strong></p>
-      <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
-      <button id="finalizar" class="finalizar">✅ Finalizar Compra</button>
-    </aside>
+  <div class="carrito">
+    <h2>🧾 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total: $<span id="total">0.00</span></strong></p>
+    <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
+    <button id="finalizar" class="finalizar">✅ Finalizar Compra</button>
+  </div>
 
-    <section id="payment-area" class="payment-area" aria-hidden="true">
-      <h3>💳 Métodos de Pago</h3>
-      <p>Seleccione PayPal o pague con tarjeta.</p>
+  <div id="payment-area" class="payment-area">
+    <h3>Métodos de Pago</h3>
+    <div id="paypal-button-container"></div>
 
-      <!-- Botón oficial de PayPal -->
-      <div id="paypal-button-container" style="margin-bottom:12px;"></div>
+    <div class="sim-card-form">
+      <h4>Pagar con Tarjeta (Simulado)</h4>
+      <input type="text" placeholder="Número de Tarjeta">
+      <input type="text" placeholder="Nombre en la Tarjeta">
+      <input type="text" placeholder="Fecha de Expiración (MM/AA)">
+      <input type="text" placeholder="CVV">
+      <button onclick="simularPago()">💳 Pagar</button>
+    </div>
 
-      <hr style="margin:12px 0; border:none; border-top:1px solid #eee;">
+    <div id="confirm-msg" class="confirm-msg" style="display:none;">
+      🎉 ¡Pago exitoso! Gracias por tu compra.
+    </div>
+  </div>
 
-      <div class="sim-card-form">
-        <h4>Pagar con Tarjeta (Simulado)</h4>
-        <input id="card-number" placeholder="Número de tarjeta" inputmode="numeric" />
-        <input id="card-name" placeholder="Nombre en la tarjeta" />
-        <input id="card-exp" placeholder="MM/AA" />
-        <input id="card-cvv" placeholder="CVV" inputmode="numeric" />
-        <button id="pay-card-btn">💳 Pagar con tarjeta</button>
-      </div>
-
-      <div id="confirm-msg" class="confirm-msg" style="display:none;"></div>
-    </section>
-  </main>
-
-  <!-- SDK oficial de PayPal -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-
   <script src="script.js"></script>
 </body>
 </html>
