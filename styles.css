@@ -70,6 +70,11 @@ select {
   margin-top: 10px;
 }
 
+.carrito .finalizar {
+  background-color: #007bff;
+  margin-top: 10px;
+}
+
 #productos { margin-top: 8px; }
 
 .payment-area {
@@ -85,18 +90,18 @@ select {
 }
 
 .sim-card-form input {
-  display:block;
-  width:100%;
-  padding:8px;
-  margin:6px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .confirm-msg {
   padding: 10px;
-  border-radius:6px;
-  background:#e6ffe9;
-  border:1px solid #b7f0c8;
-  margin-top:10px;
+  border-radius: 6px;
+  background: #e6ffe9;
+  border: 1px solid #b7f0c8;
+  margin-top: 10px;
 }
