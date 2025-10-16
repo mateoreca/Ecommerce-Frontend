@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GYMFORCE | Suplementos y Accesorios Fitness</title>
-
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -40,25 +39,28 @@
 
     <section id="payment-area" class="payment-area" aria-hidden="true">
       <h3>💳 Métodos de Pago</h3>
-      <p>Seleccione PayPal (sandbox) o pague con tarjeta (simulación).</p>
+      <p>Seleccione PayPal o pague con tarjeta.</p>
 
-      <!-- Contenedor para el botón oficial de PayPal -->
+      <!-- Botón oficial de PayPal -->
       <div id="paypal-button-container" style="margin-bottom:12px;"></div>
 
       <hr style="margin:12px 0; border:none; border-top:1px solid #eee;">
 
       <div class="sim-card-form">
         <h4>Pagar con Tarjeta (Simulado)</h4>
-        <input id="card-number" placeholder="Número de tarjeta (simulado)" inputmode="numeric" />
+        <input id="card-number" placeholder="Número de tarjeta" inputmode="numeric" />
         <input id="card-name" placeholder="Nombre en la tarjeta" />
         <input id="card-exp" placeholder="MM/AA" />
         <input id="card-cvv" placeholder="CVV" inputmode="numeric" />
-        <button id="pay-card-btn">💳 Pagar con tarjeta (Simular)</button>
+        <button id="pay-card-btn">💳 Pagar con tarjeta</button>
       </div>
 
       <div id="confirm-msg" class="confirm-msg" style="display:none;"></div>
     </section>
   </main>
+
+  <!-- SDK oficial de PayPal -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 
   <script src="script.js"></script>
 </body>
