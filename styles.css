@@ -1,107 +1,145 @@
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #1A1A1A;
   padding: 20px;
   text-align: center;
 }
 
-h1 { color: #222; }
+/* Encabezado */
+.encabezado {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+.encabezado h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #28A745;
+  margin-bottom: 5px;
+}
+.slogan {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #E0E0E0;
+}
+.descripcion {
+  max-width: 600px;
+  margin: 10px auto 0;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+}
 
+/* Filtros */
 .filtros {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  gap: 12px;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 10px;
+}
+select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #CCC;
+  background: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Open Sans';
 }
 
-select {
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #cfcfcf;
-  background: white;
-  cursor: pointer;
-}
+/* Productos */
+#productos { margin-top: 12px; }
 
 .producto {
-  border: 1px solid #ccc;
-  background: white;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px;
+  border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 12px;
   display: inline-block;
   width: 220px;
   vertical-align: top;
   text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
-
+.producto:hover {
+  transform: translateY(-3px);
+}
 .producto img {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
+}
+.producto h3 {
+  font-family: 'Montserrat';
+  margin: 8px 0 4px;
+  font-size: 1.05rem;
+}
+.producto p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
 }
 
+/* Botones */
 .producto button,
-.carrito button {
-  background-color: #28a745;
+.carrito button,
+#btn-paypal,
+#btn-card {
+  background-color: #28A745;
   border: none;
   color: white;
   padding: 8px;
-  margin-top: 5px;
-  border-radius: 4px;
+  margin-top: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+.producto button:hover,
+#btn-paypal:hover,
+#btn-card:hover {
+  background-color: #218838;
+}
+.carrito button.vaciar {
+  background-color: #DC3545;
+}
+.carrito button.vaciar:hover {
+  background-color: #b92c3e;
 }
 
+/* Carrito */
 .carrito {
   margin-top: 30px;
   padding: 15px;
-  background: #fff;
-  border-radius: 8px;
+  background: #FFFFFF;
+  border-radius: 10px;
   text-align: left;
   display: inline-block;
   min-width: 320px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.carrito button.vaciar {
-  background-color: #dc3545;
-  margin-top: 10px;
-}
-
-.carrito .finalizar {
-  background-color: #007bff;
-  margin-top: 10px;
-}
-
-#productos { margin-top: 8px; }
-
+/* Pago */
 .payment-area {
   margin-top: 20px;
-  padding: 12px;
-  background: #fff;
-  border-radius: 8px;
-  display: none;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 15px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  display: inline-block;
   text-align: left;
+  min-width: 320px;
 }
-
-.sim-card-form input {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 6px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
 .confirm-msg {
   padding: 10px;
   border-radius: 6px;
   background: #e6ffe9;
   border: 1px solid #b7f0c8;
   margin-top: 10px;
+  font-weight: 600;
+  color: #1A1A1A;
 }
