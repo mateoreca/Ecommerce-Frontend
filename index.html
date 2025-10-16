@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GYMFORCE | Suplementos y Accesorios Fitness</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-</head>
 
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
 <body>
   <header class="encabezado">
     <h1>GYMFORCE</h1>
-    <p class="slogan">Rendimiento sin límites</p>
+    <p class="slogan">Potencia tu cuerpo. Supera tus límites.</p>
     <p class="descripcion">
-      GYMFORCE es un ecommerce especializado en suplementos y accesorios premium para deportistas exigentes.  
-      Ofrecemos productos de alto rendimiento que impulsan tus entrenamientos y potencian tus resultados.  
-      Tecnología, fuerza y estilo en cada compra.
+      GYMFORCE es un ecommerce especializado en suplementos y accesorios premium para deportistas exigentes.
+      Tecnología, nutrición y diseño pensado para rendimiento real.
     </p>
   </header>
 
@@ -29,23 +28,36 @@
   </section>
 
   <main>
-    <div id="productos"></div>
+    <div id="productos" aria-live="polite"></div>
 
-    <div class="carrito">
+    <aside class="carrito">
       <h2>🧾 Carrito de Compras</h2>
-      <ul id="lista-carrito"></ul>
+      <ul id="lista-carrito" aria-live="polite"></ul>
       <p><strong>Total: $<span id="total">0.00</span></strong></p>
       <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
-    </div>
+      <button id="finalizar" class="finalizar">✅ Finalizar Compra</button>
+    </aside>
 
-    <div class="payment-area" id="payment-area">
+    <section id="payment-area" class="payment-area" aria-hidden="true">
       <h3>💳 Métodos de Pago</h3>
-      <button id="btn-paypal">Pagar con PayPal</button>
-      <button id="btn-card">Pagar con Tarjeta</button>
-      <div id="confirmacion" class="confirm-msg" style="display:none;">
-        ✅ ¡Pago realizado con éxito! Gracias por confiar en <strong>GYMFORCE</strong>.
+      <p>Seleccione PayPal (sandbox) o pague con tarjeta (simulación).</p>
+
+      <!-- Contenedor para el botón oficial de PayPal -->
+      <div id="paypal-button-container" style="margin-bottom:12px;"></div>
+
+      <hr style="margin:12px 0; border:none; border-top:1px solid #eee;">
+
+      <div class="sim-card-form">
+        <h4>Pagar con Tarjeta (Simulado)</h4>
+        <input id="card-number" placeholder="Número de tarjeta (simulado)" inputmode="numeric" />
+        <input id="card-name" placeholder="Nombre en la tarjeta" />
+        <input id="card-exp" placeholder="MM/AA" />
+        <input id="card-cvv" placeholder="CVV" inputmode="numeric" />
+        <button id="pay-card-btn">💳 Pagar con tarjeta (Simular)</button>
       </div>
-    </div>
+
+      <div id="confirm-msg" class="confirm-msg" style="display:none;"></div>
+    </section>
   </main>
 
   <script src="script.js"></script>
