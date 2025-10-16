@@ -1,0 +1,102 @@
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 { color: #222; }
+
+.filtros {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  background: white;
+  cursor: pointer;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  width: 220px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.producto img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.producto button,
+.carrito button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.carrito {
+  margin-top: 30px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: left;
+  display: inline-block;
+  min-width: 320px;
+}
+
+.carrito button.vaciar {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+#productos { margin-top: 8px; }
+
+.payment-area {
+  margin-top: 20px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  display: none;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.sim-card-form input {
+  display:block;
+  width:100%;
+  padding:8px;
+  margin:6px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.confirm-msg {
+  padding: 10px;
+  border-radius:6px;
+  background:#e6ffe9;
+  border:1px solid #b7f0c8;
+  margin-top:10px;
+}
