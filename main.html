@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ecommerce Gym Supplements</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ecommerce Gym Supplements</h1>
+
+  <div class="filtros">
+    <label for="filtro">Filtrar por categoría:</label>
+    <select id="filtro">
+      <option value="all">Todas</option>
+      <option value="Marvel">Marvel</option>
+      <option value="DC">DC</option>
+      <option value="Independientes">Independientes</option>
+    </select>
+  </div>
+
+  <div id="productos"></div>
+
+  <div class="carrito">
+    <h2>🧾 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total: $<span id="total">0.00</span></strong></p>
+    <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
+  </div>
+
+  <div style="margin-top:8px;">
+    <button id="btn-finalizar">✅ Finalizar Compra</button>
+  </div>
+
+  <div class="payment-area" id="payment-area" aria-hidden="true">
+    <h3>Métodos de Pago</h3>
+    <p>Seleccione PayPal o tarjeta. (Toda la funcionalidad es simulada / sandbox)</p>
+
+    <div id="paypal-button-container"></div>
+
+    <hr>
+    <div>
+      <h4>Pagar con tarjeta (Simulación)</h4>
+      <form id="card-form" class="sim-card-form" onsubmit="event.preventDefault(); pagarConTarjetaSimulada()">
+        <input id="card-number" placeholder="Número de tarjeta (simulado)" required>
+        <input id="card-exp" placeholder="MM/AA" required>
+        <input id="card-cvv" placeholder="CVV" required>
+        <button type="submit">Pagar con tarjeta (Simular)</button>
+      </form>
+    </div>
+
+    <div id="confirm-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
