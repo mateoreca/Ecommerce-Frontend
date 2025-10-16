@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecommerce Gym Supplements</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,11 +10,11 @@
   <h1>Ecommerce Gym Supplements</h1>
 
   <div class="filtros">
-    <label for="filtro">Filtrar por categoría:</label>
-    <select id="filtro">
-      <option value="all">Todas</option>
-      <option value="Accesorios">Accesorios</option>
+    <label for="filtro-categoria">Filtrar por categoría:</label>
+    <select id="filtro-categoria">
+      <option value="todas">Todas</option>
       <option value="Suplementos">Suplementos</option>
+      <option value="Accesorios">Accesorios</option>
     </select>
   </div>
 
@@ -25,32 +25,28 @@
     <ul id="lista-carrito"></ul>
     <p><strong>Total: $<span id="total">0.00</span></strong></p>
     <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
+    <button id="finalizar" class="finalizar">✅ Finalizar Compra</button>
   </div>
 
-  <div style="margin-top:8px;">
-    <button id="btn-finalizar">✅ Finalizar Compra</button>
-  </div>
-
-  <div class="payment-area" id="payment-area" aria-hidden="true">
+  <div id="payment-area" class="payment-area">
     <h3>Métodos de Pago</h3>
-    <p>Seleccione PayPal o tarjeta. (Toda la funcionalidad es simulada / sandbox)</p>
-
     <div id="paypal-button-container"></div>
 
-    <hr>
-    <div>
-      <h4>Pagar con tarjeta (Simulación)</h4>
-      <form id="card-form" class="sim-card-form" onsubmit="event.preventDefault(); pagarConTarjetaSimulada()">
-        <input id="card-number" placeholder="Número de tarjeta (simulado)" required>
-        <input id="card-exp" placeholder="MM/AA" required>
-        <input id="card-cvv" placeholder="CVV" required>
-        <button type="submit">Pagar con tarjeta (Simular)</button>
-      </form>
+    <div class="sim-card-form">
+      <h4>Pagar con Tarjeta (Simulado)</h4>
+      <input type="text" placeholder="Número de Tarjeta">
+      <input type="text" placeholder="Nombre en la Tarjeta">
+      <input type="text" placeholder="Fecha de Expiración (MM/AA)">
+      <input type="text" placeholder="CVV">
+      <button onclick="simularPago()">💳 Pagar</button>
     </div>
 
-    <div id="confirm-container"></div>
+    <div id="confirm-msg" class="confirm-msg" style="display:none;">
+      🎉 ¡Pago exitoso! Gracias por tu compra.
+    </div>
   </div>
 
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
   <script src="script.js"></script>
 </body>
 </html>
